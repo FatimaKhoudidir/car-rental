@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="663.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GestionFactureController">
+   <children>
+      <HBox alignment="CENTER" layoutX="346.0" layoutY="14.0" prefHeight="42.0" prefWidth="298.0" styleClass="search_box" stylesheets="@../application/application.css">
+         <children>
+            <TextField fx:id="txt_search_facture" prefHeight="31.0" prefWidth="205.0" promptText="N° Facture" styleClass="search" stylesheets="@../application/application.css" />
+            <Button mnemonicParsing="false" onMouseClicked="#SearchFacture" prefHeight="33.0" prefWidth="79.0" styleClass="search_btn" stylesheets="@../application/application.css" text="Search" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="1.0" right="-5.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+      <TableView fx:id="table_facture" layoutX="277.0" layoutY="75.0" onMouseClicked="#AfficherLigne" prefHeight="541.0" prefWidth="708.0" style="-fx-background-color: transparent;" styleClass="tableView" stylesheets="@../application/application.css" AnchorPane.leftAnchor="277.0" AnchorPane.rightAnchor="5.0">
+         <columns>
+            <TableColumn fx:id="num_facture_col" prefWidth="181.0" text="N° Facture" />
+            <TableColumn fx:id="montant_col" prefWidth="150.0" text="Montant DH" />
+            <TableColumn fx:id="date_facture_col" prefWidth="191.0" text="Date Facture" />
+            <TableColumn fx:id="num_client_col" prefWidth="185.0" text="N° Client" />
+         </columns>
+      </TableView>
+      <HBox alignment="CENTER_LEFT" layoutX="31.0" layoutY="88.0" prefHeight="40.0" prefWidth="253.0" styleClass="text_label" stylesheets="@../application/application.css" AnchorPane.leftAnchor="31.0">
+         <children>
+            <TextField fx:id="txt_num_facture" prefHeight="31.0" prefWidth="238.0" styleClass="text_field" stylesheets="@../application/application.css" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="31.0" layoutY="153.0" prefHeight="40.0" prefWidth="253.0" AnchorPane.leftAnchor="31.0">
+         <children>
+            <TextField fx:id="txt_montant" prefHeight="31.0" prefWidth="239.0" styleClass="text_field" stylesheets="@../application/application.css" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="26.0" layoutY="213.0" prefHeight="40.0" prefWidth="264.0" AnchorPane.leftAnchor="26.0">
+         <children>
+            <DatePicker fx:id="picker_date_facture" blendMode="DARKEN" prefHeight="31.0" prefWidth="240.0" styleClass="text_field" stylesheets="@../application/application.css" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="23.0" layoutY="435.0" prefHeight="40.0" prefWidth="253.0" styleClass="text_label" stylesheets="@../application/application.css">
+         <children>
+            <TextField fx:id="txt_num_client" prefHeight="31.0" prefWidth="241.0" styleClass="text_field" stylesheets="@../application/application.css" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="23.0" layoutY="377.0" prefHeight="40.0" prefWidth="253.0" styleClass="text_label" stylesheets="@../application/application.css">
+         <children>
+            <TextField fx:id="txt_num_immatriculation" prefHeight="31.0" prefWidth="238.0" styleClass="text_field" stylesheets="@../application/application.css" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="23.0" layoutY="486.0" prefHeight="40.0" prefWidth="253.0" styleClass="text_label" stylesheets="@../application/application.css">
+         <children>
+            <TextField fx:id="txt_nom_complet" prefHeight="31.0" prefWidth="242.0" styleClass="text_field" stylesheets="@../application/application.css" />
+         </children>
+      </HBox>
+      <Button alignment="CENTER" layoutX="14.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#AddFacture" prefHeight="36.0" prefWidth="253.0" styleClass="add_mod_del_btn" stylesheets="@../application/application.css" text="Ajouter" AnchorPane.bottomAnchor="52.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/blue/add.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" layoutX="14.0" layoutY="533.0" mnemonicParsing="false" onMouseClicked="#EditFacture" prefHeight="36.0" prefWidth="253.0" styleClass="add_mod_del_btn" stylesheets="@../application/application.css" text="Modifier" AnchorPane.bottomAnchor="94.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/blue/Edit.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" layoutX="551.0" layoutY="620.0" mnemonicParsing="false" onMouseClicked="#PrintFacture" prefHeight="36.0" prefWidth="281.0" styleClass="add_mod_del_btn" stylesheets="@../application/application.css" text="     Imprimer" AnchorPane.bottomAnchor="7.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/blue/print.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" layoutX="14.0" layoutY="617.0" mnemonicParsing="false" onMouseClicked="#DeleteFacture" prefHeight="36.0" prefWidth="253.0" styleClass="delete_btn" stylesheets="@../application/application.css" text="Supprimer" AnchorPane.bottomAnchor="10.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/blue/delete.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="14.0" layoutY="72.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="N° Facture" />
+      <Label layoutX="14.0" layoutY="134.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="Montant à Payer" />
+      <Label layoutX="12.0" layoutY="360.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="N° immatriculation" />
+      <Label layoutX="9.0" layoutY="197.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="Date Facture" />
+      <Label layoutX="15.0" layoutY="424.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="N° Client" />
+      <Label layoutX="15.0" layoutY="475.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="Nom complet" />
+      <Label layoutX="12.0" layoutY="259.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="N° Contrat" />
+      <HBox alignment="CENTER_LEFT" layoutX="23.0" layoutY="275.0" prefHeight="40.0" prefWidth="253.0" styleClass="text_label" stylesheets="@../application/application.css">
+         <children>
+            <ComboBox fx:id="box_num_contrat" prefHeight="31.0" prefWidth="242.0" styleClass="text_field" stylesheets="@../application/application.css" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="-1.0" layoutY="319.0" prefHeight="40.0" prefWidth="281.0" styleClass="text_label" stylesheets="@../application/application.css">
+         <children>
+            <Line endX="-25.5" startX="-100.0" stroke="#fa5f7e" strokeWidth="5.0" />
+            <Label prefHeight="21.0" prefWidth="132.0" text="Correspond à">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets left="4.0" />
+               </padding>
+            </Label>
+            <Line endX="20.180191040039062" endY="-8.0108642578125E-4" startX="107.92892456054688" startY="-7.0953369140625E-4" stroke="#fa5f7e" strokeWidth="5.0" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

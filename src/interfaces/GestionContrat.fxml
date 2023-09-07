@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GestionContratController">
+   <children>
+      <HBox alignment="CENTER" layoutX="346.0" layoutY="14.0" prefHeight="42.0" prefWidth="298.0" styleClass="search_box" stylesheets="@../application/application.css">
+         <children>
+            <TextField fx:id="txt_search_contrat" prefHeight="31.0" prefWidth="205.0" promptText="N° de Contrat" styleClass="search" stylesheets="@../application/application.css" />
+            <Button mnemonicParsing="false" onMouseClicked="#chercherContrat" prefHeight="33.0" prefWidth="79.0" styleClass="search_btn" stylesheets="@../application/application.css" text="Search" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="1.0" right="-5.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="22.0" layoutY="97.0" prefHeight="40.0" prefWidth="270.0">
+         <children>
+            <TextField fx:id="txt_num_contrat" prefHeight="33.0" prefWidth="265.0" styleClass="text_field" stylesheets="@../application/application.css" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="22.0" layoutY="228.0" prefHeight="40.0" prefWidth="270.0" AnchorPane.topAnchor="228.0">
+         <children>
+            <TextField fx:id="txt_nom_complet" prefHeight="33.0" prefWidth="264.0" styleClass="text_field" stylesheets="@../application/application.css" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="19.0" layoutY="358.0" prefHeight="40.0" prefWidth="278.0" AnchorPane.topAnchor="358.0">
+         <children>
+            <DatePicker fx:id="picker_date_contrat" blendMode="DARKEN" prefHeight="33.0" prefWidth="267.0" styleClass="text_field" stylesheets="@../application/application.css" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="18.0" layoutY="423.0" prefHeight="40.0" prefWidth="270.0" stylesheets="@../application/application.css" AnchorPane.topAnchor="423.0">
+         <children>
+            <DatePicker fx:id="picker_date_echeance" blendMode="DARKEN" prefHeight="33.0" prefWidth="269.0" styleClass="text_field" stylesheets="@../application/application.css" />
+         </children>
+      </HBox>
+      <TableView fx:id="table_contrat" layoutX="301.0" layoutY="82.0" onMouseClicked="#afficherLigne" prefHeight="529.0" prefWidth="694.0" styleClass="tableView" stylesheets="@../application/application.css" AnchorPane.bottomAnchor="52.0" AnchorPane.rightAnchor="3.0">
+         <columns>
+            <TableColumn fx:id="num_contrat_col" prefWidth="92.0" text="N° Contrat" />
+            <TableColumn fx:id="date_contrat_col" prefWidth="169.0" text="Date de contrat" />
+            <TableColumn fx:id="date_echeance_col" prefWidth="168.0" text="Date d'echeance" />
+            <TableColumn fx:id="num_client_col" prefWidth="121.0" text="N° client" />
+            <TableColumn fx:id="num_immatriculation_col" prefWidth="143.0" text="N° immatriculation" />
+         </columns>
+      </TableView>
+      <Button alignment="CENTER" layoutX="21.0" layoutY="491.0" mnemonicParsing="false" onMouseClicked="#EditContrat" prefHeight="36.0" prefWidth="248.0" styleClass="add_mod_del_btn" stylesheets="@../application/application.css" text="Modifier" AnchorPane.bottomAnchor="136.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/blue/Edit.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" layoutX="21.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#AddContrat" prefHeight="36.0" prefWidth="248.0" styleClass="add_mod_del_btn" stylesheets="@../application/application.css" text="Ajouter" AnchorPane.bottomAnchor="82.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="32.0" onMouseClicked="#AddContrat" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/blue/add.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" layoutX="21.0" layoutY="601.0" mnemonicParsing="false" onMouseClicked="#DeleteContrat" prefHeight="36.0" prefWidth="248.0" styleClass="delete_btn" stylesheets="@../application/application.css" text="Supprimer" AnchorPane.bottomAnchor="26.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/blue/delete.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" layoutX="504.0" layoutY="619.0" mnemonicParsing="false" onMouseClicked="#PrintContrat" prefHeight="36.0" prefWidth="298.0" styleClass="add_mod_del_btn" stylesheets="@../application/application.css" text="    Imprimer" AnchorPane.bottomAnchor="8.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/blue/print.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="15.0" layoutY="77.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="N° Contrat" />
+      <Label layoutX="15.0" layoutY="207.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="Nom Complet" />
+      <Label layoutX="12.0" layoutY="337.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="Date de contrat" />
+      <Label layoutX="11.0" layoutY="404.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="Date d'écheance" />
+      <Label layoutX="13.0" layoutY="142.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="N° Client" />
+      <HBox alignment="CENTER_LEFT" layoutX="24.0" layoutY="160.0" prefHeight="40.0" prefWidth="269.0" styleClass="text_label" stylesheets="@../application/application.css">
+         <children>
+            <ComboBox fx:id="box_num_client" onAction="#Vehicule_reserve_par_client" prefHeight="33.0" prefWidth="263.0" styleClass="text_field" stylesheets="@../application/application.css" />
+         </children>
+      </HBox>
+      <Label layoutX="11.0" layoutY="274.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="N° Immatirculation" />
+      <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="292.0" prefHeight="40.0" prefWidth="269.0" styleClass="text_label" stylesheets="@../application/application.css">
+         <children>
+            <ComboBox fx:id="box_num_immatriculation" prefHeight="33.0" prefWidth="263.0" styleClass="text_field" stylesheets="@../application/application.css" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

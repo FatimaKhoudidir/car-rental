@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="663.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GestionSanctionController">
+   <children>
+      <HBox alignment="CENTER" layoutX="346.0" layoutY="14.0" prefHeight="42.0" prefWidth="298.0" styleClass="search_box" stylesheets="@../application/application.css">
+         <children>
+            <TextField fx:id="txt_search_sanction" prefHeight="31.0" prefWidth="205.0" promptText="N° Client" styleClass="search" stylesheets="@../application/application.css" />
+            <Button mnemonicParsing="false" onMouseClicked="#ChercherClient" prefHeight="33.0" prefWidth="79.0" styleClass="search_btn" stylesheets="@../application/application.css" text="Search" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="1.0" right="-5.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+      <Button alignment="CENTER" layoutX="328.0" layoutY="120.0" mnemonicParsing="false" onMouseClicked="#EditMontant" prefHeight="36.0" prefWidth="123.0" styleClass="add_mod_del_btn" stylesheets="@../application/application.css" text="Modifier" AnchorPane.bottomAnchor="507.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/blue/Edit.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TableView fx:id="table_sanction" layoutX="559.0" layoutY="221.0" onMouseClicked="#AfficherLigne" prefHeight="431.0" prefWidth="426.0" styleClass="tableView" stylesheets="@../application/application.css" AnchorPane.leftAnchor="559.0" AnchorPane.rightAnchor="5.0">
+         <columns>
+            <TableColumn fx:id="num_sanction_col" prefWidth="99.0" text="N° Sanction" />
+            <TableColumn fx:id="num_client_col" prefWidth="140.0" text="N° Client" />
+            <TableColumn fx:id="totale_sanction_col" prefWidth="186.0" text="Totale de sanction" />
+         </columns>
+      </TableView>
+      <HBox alignment="CENTER_LEFT" layoutX="22.0" layoutY="117.0" prefHeight="42.0" prefWidth="231.0">
+         <children>
+            <TextField fx:id="txt_montant" prefHeight="31.0" prefWidth="222.0" styleClass="text_field" stylesheets="@../application/application.css" />
+         </children>
+      </HBox>
+      <Label layoutX="346.0" layoutY="189.0" style="-fx-font-size: 18px;" styleClass="text_label" stylesheets="@../application/application.css" text="Liste des Clients sanctionnés" />
+      <Label layoutX="22.0" layoutY="107.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="Montant" />
+      <TextField fx:id="txt_jours_retarde" layoutX="298.0" layoutY="275.0" prefHeight="40.0" prefWidth="251.0" styleClass="text_field" stylesheets="@../application/application.css" />
+      <DatePicker blendMode="DARKEN" cache="true" layoutX="13.0" layoutY="559.0" prefHeight="38.0" prefWidth="252.0" styleClass="text_field" stylesheets="@../application/application.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </DatePicker>
+      <Label layoutX="298.0" layoutY="263.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="Jours retardé" />
+      <Label layoutX="11.0" layoutY="543.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="Date Retour" />
+      <TextField fx:id="txt_nom_complet" layoutX="18.0" layoutY="276.0" prefHeight="40.0" prefWidth="251.0" styleClass="text_field" stylesheets="@../application/application.css" />
+      <Label layoutX="18.0" layoutY="263.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="Nom complet" />
+      <TextField fx:id="txt_num_immatriculation" layoutX="294.0" layoutY="368.0" prefHeight="40.0" prefWidth="251.0" styleClass="text_field" stylesheets="@../application/application.css" />
+      <Label layoutX="294.0" layoutY="356.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="N° Immatriculation" />
+      <TextField fx:id="txt_num_contrat" layoutX="12.0" layoutY="367.0" prefHeight="40.0" prefWidth="251.0" styleClass="text_field" stylesheets="@../application/application.css" />
+      <Label layoutX="12.0" layoutY="355.0" styleClass="label_text_field" stylesheets="@../application/application.css" text="N° Contrat" />
+   </children>
+</AnchorPane>

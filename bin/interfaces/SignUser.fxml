@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbox" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="480.0" styleClass="SignUserVbox" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SignUserController">
+   <children>
+      <Label text="USER" textFill="#fa5f7e">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="6.0" />
+         </VBox.margin>
+      </Label>
+      <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+         <children>
+            <TextField fx:id="text_userEmail" alignment="TOP_LEFT" prefHeight="31.0" prefWidth="230.0" promptText="Email Or Phone number" styleClass="email_box" stylesheets="@../application/application.css" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets left="20.0" right="15.0" top="25.0" />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="8.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="200.0">
+         <children>
+            <PasswordField fx:id="text_userPassword" prefHeight="39.0" prefWidth="445.0" promptText="Password" styleClass="email_box" stylesheets="@../application/application.css">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </PasswordField>
+         </children>
+         <VBox.margin>
+            <Insets bottom="8.0" right="15.0" top="23.0" />
+         </VBox.margin>
+      </HBox>
+      <Button fx:id="valider_btn" alignment="CENTER" mnemonicParsing="false" onAction="#openHomeUser" prefHeight="34.0" prefWidth="432.0" styleClass="valide_btn" stylesheets="@../application/application.css" text="Valider" VBox.vgrow="ALWAYS">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="20.0" top="23.0" />
+         </VBox.margin>
+      </Button>
+      <Label fx:id="txt_erreur_connexion" lineSpacing="9.0" prefHeight="65.0" prefWidth="434.0" textFill="RED" textOverrun="CLIP" wrapText="true">
+         <VBox.margin>
+            <Insets bottom="-78.0" left="21.0" top="12.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</VBox>

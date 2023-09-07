@@ -1,0 +1,212 @@
+.parent{
+	-fx-background-color: transparent;
+}
+.pane{
+	-fx-background-color: #4B56C0;
+}
+.user_btn{
+	-fx-background-color: #FA5F7E;
+	-fx-background-radius: 10px;
+	-fx-test-fill: white;
+}
+.user_btn:hover{
+	-fx-background-color: #FA7E96;
+}
+.white_vbox{
+	-fx-background-color: white;
+}
+.SignUserVbox{
+	-fx-background-color: white;
+}
+.email_box{
+	-fx-background-color: transparent;
+	-fx-border-width: 0px 0px 2px 0px;
+	-fx-border-color: #3D46A5;
+	-fx-text-fill: #3D46A5;
+	-fx-font-size: 18px;
+	-fx-font-weight: bold;
+}
+.email_box:active{
+	-fx-background-color: red;
+}
+.valide_btn{
+	-fx-background-color: #FA5F7E;
+	-fx-text-fill: white;
+}
+.valide_btn:hover{
+	-fx-background-color: #FA7E96;
+}
+.gestion_btn{
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+	-fx-background-radius: 0px;
+}
+/*  .gestion_btn:pressed{ */
+/* 	-fx-background-color: white; */
+/* 	-fx-text-fill: #3D46A5; */
+/* }  */
+.gestion_btn:hover{
+	-fx-background-color: white;
+	-fx-text-fill: #3D46A5;
+	-fx-padding: 10px 0 10px 57px;
+}
+
+/* .gestion_btn:focused{ */
+/* 	-fx-background-color: white; */
+/* 	-fx-text-fill: #FA5F7E; */
+/* /* 	-fx-background-radius: 0px; */ 
+/* } */
+.search_box{
+	-fx-background-color: transparent;
+	-fx-background-radius: 100;
+	-fx-border-width:1.5px;
+	-fx-border-radius: 100;
+	-fx-border-color: #4B56C0;
+}
+.search{
+	-fx-background-color: transparent;
+	-fx-text-fill: #FA5F7E;
+	-fx-font-weight: bold;
+}
+.search_btn{
+	-fx-background-color: #FA5F7E;
+	-fx-background-radius: 30;
+}
+.search_btn:hover{
+	-fx-background-color: #FA7E96;
+}
+.permet{
+	-fx-border-color: red;
+	
+}
+.upload_btn{
+	-fx-background-color: #FA7E96;
+	-fx-background-radius: 30;
+}
+.upload_btn:hover{
+	-fx-background-color: #FA5F7E;
+}
+
+
+/* ******* TABLEAU ******** */
+.tableView{
+	-fx-background-color: transparent;
+	-fx-background-radius: 12px;
+}
+.tableView:focused{
+	-fx-background-color: transparent;
+}
+.tableView .column-header{
+	-fx-background-color: transparent;
+}
+.tableView .column-header-background .label{
+ 	-fx-background-color: transparent;
+	-fx-text-fill: white;
+}
+.tableView .column-header-background{
+	-fx-background-color: linear-gradient(#FA7E96 0%, #FA5F7E 100%);
+}
+.tableView .table-cell{
+	-fx-text-fill: #3D46A5;
+	-fx-alignment: center;
+	-fx-padding: 5 0;
+	-fx-font-weight: bold;
+}
+.table-row-cell{
+	-fx-text-fill: red;
+}
+.table-row-cell:hover{
+	-fx-cursor: hand;
+	-fx-background-color: #BDCAF6;
+	-fx-text-fill: white;
+}
+
+
+
+
+
+
+.datepicker{
+	-fx-text-fill: red;
+}
+
+.add_mod_del_btn{
+	-fx-background-color: #FA7E96;
+	-fx-background-radius: 30;
+	-fx-text-fill: white;
+}
+.add_mod_del_btn:hover{
+	-fx-background-color: #FA5F7E;
+	-fx-padding: 8px;
+}
+.delete_btn{
+	-fx-background-color: #FA7E96;
+	-fx-background-radius: 30;
+	-fx-text-fill: white;
+}
+.delete_btn:hover{
+	-fx-background-color: red;
+	-fx-padding: 8px;
+}
+.exit_btn{
+	-fx-background-radius: 0;
+	-fx-background-color: transparent;
+}
+
+.exit_btn:hover{
+	-fx-background-color: #E81123;
+}
+
+.exit_btn_main{
+	-fx-background-color: white;
+	-fx-text-fill: #FA5F7E;
+}
+.exit_btn_main:hover{
+	-fx-background-color: red;
+	-fx-text-fill: white;
+}
+.valide_res_btn{
+	-fx-background-color: transparent;
+	-fx-background-radius: 30;
+	-fx-text-fill: green;
+	-fx-border-color: #3D46A5;
+	-fx-border-radius: 30;
+}
+.valide_res_btn:hover{
+	-fx-background-color: #00D000;
+	-fx-text-fill: white;
+}
+.annuler_res_btn{
+	-fx-background-color: transparent;
+	-fx-background-radius: 30;
+	-fx-text-fill: red;
+	-fx-border-color: #3D46A5;
+	-fx-border-radius: 30;
+}
+.annuler_res_btn:hover{
+	-fx-background-color: red;
+	-fx-text-fill: white;
+}
+
+.text_field{
+	-fx-background-color: transparent;
+	-fx-border-color: #3D46A5;
+	-fx-border-width: 0 0 1.5px 0;
+	-fx-font-weight: bold;
+	-fx-text-fill: #FA5F7E;
+}
+.text_label{ /*to clarify*/
+	-fx-font-weight: bold;
+	-fx-text-fill: #3D46A5;
+}
+.label_text_field{
+	-fx-text-fill: #3D46A5;
+	-fx-font-weight: bold;
+}
+
+/* .close_btn{
+	-fx-fill: white;
+}
+.close_btn:hover{
+	-fx-fill: red;
+} */
